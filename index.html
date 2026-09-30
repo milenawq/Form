@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            margin-top: 8px;
+            padding: 11px 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        input[type="radio"] {
+            margin-right: 6px;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        #preview {
+            min-height: 20px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        #preview img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        #agreement {
+            margin-right: 6px;
+        }
+
+        button {
+            padding: 11px 20px;
+            border: none;
+            border-radius: 7px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        #submitButton {
+            background: #4a90e2;
+            color: white;
+            margin-right: 10px;
+        }
+
+        #submitButton:hover:not(:disabled) {
+            background: #357abd;
+        }
+
+        #submitButton:disabled {
+            background: #bfc5cc;
+            cursor: not-allowed;
+        }
+
+        #resetButton {
+            background: #e6e6e6;
+            color: #333;
+        }
+
+        #resetButton:hover {
+            background: #d5d5d5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Створення оголошення</h1>
+
+    <form id="adForm">
+
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title">
+
+        <br><br>
+
+        <label for="description">Опис:</label>
+        <textarea id="description" name="description"></textarea>
+
+        <br><br>
+
+        <label for="category">Категорія:</label>
+        <select id="category" name="category">
+            <option value="Техніка">Техніка</option>
+            <option value="Косметика">Косметика</option>
+            <option value="Автомобілі">Автомобілі</option>
+            <option value="Нерухомість">Нерухомість</option>
+            <option value="Одяг">Одяг</option>
+        </select>
+
+        <br><br>
+
+        <p>Тип публікації:</p>
+
+        <label>
+            <input type="radio" name="type" value="Звичайна" checked>
+            Звичайна
+        </label>
+
+        <label>
+            <input type="radio" name="type" value="Термінова">
+            Термінова
+        </label>
+
+        <br><br>
+
+        <label for="image">Зображення:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+
+        <br><br>
+
+        <div id="preview"></div>
+
+        <br>
+
+        <label>
+            <input type="checkbox" id="agreement" name="agreement">
+            Я погоджуюсь з правилами
+        </label>
+
+        <br><br>
+
+        <button type="submit" id="submitButton" disabled>
+            Опублікувати
+        </button>
+
+        <button type="reset" id="resetButton">
+            Скинути
+        </button>
+
+    </form>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
